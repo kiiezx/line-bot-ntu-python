@@ -49,8 +49,8 @@ app = Flask(__name__)
 table = get_exchange_table() # 要加小括號，否則只會印出函數名稱
 print("匯率表", table)
 
-configuration = Configuration(access_token==os.gentv("LINE_ACCESS_TOKEN"))
-handler = WebhookHandler(os.gentv("LINE_SECRET"))
+configuration = Configuration(access_token=os.getenv("LINE_ACCESS_TOKEN"))
+handler = WebhookHandler(os.getenv("LINE_SECRET"))
 
 @app.route("/", methods=['POST'])
 def callback():
